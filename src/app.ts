@@ -23,17 +23,17 @@ app.post(
       let totalPoints = 1000;
       const { studentId, amount } = req.body;
 
-      if (!studentId || !amount) {
+      if (!studentId) {
         return res.status(400).json({
           code: "Error-0001-02",
           status: "400",
-          message: "Missing or invalid field.",
+          message: "Missing studentId field",
         });
       }
 
       if (amount <= 0) {
         return res.status(400).json({
-          code: "Error-0001-02",
+          code: "Error-0001-03",
           status: "400",
           message: "amount must have more than 0",
         });
